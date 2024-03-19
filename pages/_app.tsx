@@ -4,7 +4,6 @@ import Head from 'next/head';
 import { MantineProvider } from '@mantine/core';
 import { Analytics } from '@vercel/analytics/react';
 import { theme } from '../theme';
-import { MapProvider } from '@/context/Map';
 import Shell from '@/components/AppShell';
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -18,11 +17,9 @@ export default function App({ Component, pageProps }: AppProps) {
         />
         <link rel="shortcut icon" href="/favicon.svg" />
       </Head>
-      <MapProvider>
         <Shell>
           <Component {...pageProps} />
         </Shell>
-      </MapProvider>
       <Analytics />
     </MantineProvider>
   );

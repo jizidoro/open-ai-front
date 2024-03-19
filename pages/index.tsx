@@ -1,8 +1,8 @@
 import { SimpleGrid } from '@mantine/core';
 import useAssistant from '@/hooks/useAssistant';
 import Chat from '@/components/Chat';
-import Map from '@/components/Map';
 import { cssMainSize } from '@/theme';
+import Link from 'next/link';
 
 export default function HomePage() {
   const { messages, sendMessageAndRun, isRunning, resetThread } = useAssistant();
@@ -15,7 +15,9 @@ export default function HomePage() {
         isRunning={isRunning}
         resetThread={resetThread}
       />
-      <Map />
+      <Link href="/stream">
+        Go to Stream Page
+      </Link>
     </SimpleGrid>
   );
 }
